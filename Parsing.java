@@ -1,6 +1,12 @@
 public class parsing
 {
+	
 	static String[] input = new string[2];
+	
+	String parsingMethod(String[] string)
+	{
+		return ;
+	}
 	public static void main (String[] args)
 	throws ArrayIndexOutOfBoundsException, NumberFormatException
 	{
