@@ -1,10 +1,48 @@
-public class parsing
+public class Parsing
 {
-	
-	static String[] input = new string[2];
+	static int[] num = new int[2];
+	static String[] input = new String[2];
+	static String[] parseReturn = new string[2];
 	
 	String parsingMethod(String[] string)
 	{
+		String returnString=null;
+		int returnInt=null;
+		float returnFloat=null;
+		try
+		{
+			
+			returnString = Integer.parseInt(string[0]);
+			System.out.println("Please restart the program and type digits");
+			
+		}
+		catch(NumberFormatException e)
+		{
+			try
+			{
+				System.out.println("No decimals you dingus");
+				returnFloat = Float.parseFloat(string[0]);
+				System.out.println("You typed a decimal you retard,\nRestart the program and type in a number with no digits this time");
+			}
+			catch(NumberFormatException e)
+			{
+				System.out.println("Dont mistype a digit");
+				returnString = string[0];
+				System.out.println("I just said dont mistype a digit you idiot, \nrestart the program and dont mess up this time");
+			}
+		}
+		if (returnInt != null) return "integer";
+		if (returnFloat != null) return "decimal";
+		if (returnString != null)
+		{
+			Boolean returnBool=Boolean.parseBoolean(string[0]);
+			if (returnBool == true) return "boolean";
+			return "spelling mistake";
+		}else 
+		{
+			System.out.println("Malfunctioned,needs review");
+			System.exit(2);
+		}
 		return ;
 	}
 	public static void main (String[] args)
